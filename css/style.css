@@ -1,7 +1,24 @@
 /* =========================================
-   Ganesh Chittalwar - DBA Portfolio
-   Main Stylesheet
+   GANESH CHITTALWAR - DBA PORTFOLIO
+   Professional Responsive Stylesheet
    ========================================= */
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --dark: #0f172a;
+    --dark-light: #1e293b;
+    --text: #334155;
+    --muted: #64748b;
+    --light: #f8fafc;
+    --white: #ffffff;
+    --border: #e2e8f0;
+    --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================
+   RESET
+========================= */
 
 * {
     margin: 0;
@@ -16,26 +33,453 @@ html {
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
-    background: #f5f7fa;
-    color: #1f2937;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-section {
-    padding: 80px 0;
-}
-
-h1,
-h2,
-h3 {
-    line-height: 1.2;
+    background: var(--light);
+    color: var(--text);
 }
 
 a {
     text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+section {
+    padding: 90px 0;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+}
+
+nav a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(135deg, #eff6ff 0%, #f8fafc 55%, #ffffff 100%);
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero-label,
+.section-label {
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 1;
+    color: var(--dark);
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    color: var(--dark-light);
+    margin-bottom: 25px;
+}
+
+.hero-description {
+    max-width: 720px;
+    font-size: 1.15rem;
+    color: var(--muted);
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.primary-btn {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.primary-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    border: 1px solid var(--border);
+    background: var(--white);
+    color: var(--dark);
+}
+
+.secondary-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    background: var(--white);
+}
+
+.section:nth-of-type(even) {
+    background: var(--light);
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--dark);
+    margin-bottom: 30px;
+}
+
+.section-text {
+    max-width: 850px;
+    margin-bottom: 18px;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-section {
+    background: var(--light);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.skill-card {
+    padding: 30px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.skill-card h3 {
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.skill-card p {
+    color: var(--muted);
+}
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+.timeline {
+    max-width: 900px;
+    border-left: 3px solid var(--primary);
+    padding-left: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 28px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    background: var(--primary);
+    border-radius: 50%;
+    left: -38px;
+    top: 32px;
+}
+
+.timeline-item h3 {
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.timeline-company {
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects-section {
+    background: var(--light);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+.project-card span {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* =========================
+   CERTIFICATIONS
+========================= */
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.certification-card {
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.certification-card h3 {
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.certification-card p {
+    color: var(--muted);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+    background: var(--dark);
+    color: var(--white);
+}
+
+.contact-section .section-title {
+    color: var(--white);
+}
+
+.contact-section .section-text {
+    color: #cbd5e1;
+}
+
+.contact-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.contact-links a {
+    padding: 12px 22px;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    color: var(--white);
+    transition: 0.3s ease;
+}
+
+.contact-links a:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #020617;
+    color: #94a3b8;
+    padding: 25px 0;
+    text-align: center;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 0.85rem;
+    }
+
+    .skills-grid,
+    .certifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .nav-container {
+        flex-direction: column;
+        padding: 18px 0;
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 550px;
+    }
+
+    section {
+        padding: 65px 0;
+    }
+
+    .skills-grid,
+    .projects-grid,
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline {
+        padding-left: 20px;
+    }
+
+    .timeline-item::before {
+        left: -28px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
 }
