@@ -1050,3 +1050,769 @@ body {
 .hero a:nth-of-type(2):hover {
     background: #e2e8f0 !important;
 }
+
+/* =========================================================
+   FINAL PREMIUM DBA HERO DESIGN
+   SQL SERVER + AZURE + POSTGRESQL 3D VISUAL
+   ========================================================= */
+
+.hero {
+    position: relative;
+    min-height: 560px;
+    overflow: hidden;
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            circle at 80% 45%,
+            rgba(37, 99, 235, 0.20),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(6, 182, 212, 0.14),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #020617 0%,
+            #071426 45%,
+            #111d45 100%
+        );
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+   ========================================================= */
+
+.hero-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(59, 130, 246, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(59, 130, 246, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black 0%,
+            rgba(0,0,0,0.8) 60%,
+            transparent 100%
+        );
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* =========================================================
+   HERO CONTAINER
+   ========================================================= */
+
+.hero-container {
+    position: relative;
+
+    min-height: 560px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(420px, 0.85fr);
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   HERO TEXT
+   ========================================================= */
+
+.hero-content {
+    position: relative;
+    z-index: 20;
+
+    max-width: 680px;
+}
+
+
+.hero-label {
+    margin-bottom: 16px;
+
+    color: #60a5fa !important;
+
+    font-size: 0.82rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+.hero h1 {
+    margin: 0 0 18px;
+
+    font-size: clamp(
+        3rem,
+        5vw,
+        4.6rem
+    ) !important;
+
+    line-height: 1.05 !important;
+
+    font-weight: 800 !important;
+
+    color: #ffffff !important;
+
+    letter-spacing: -2px;
+
+    text-shadow:
+        0 5px 25px rgba(0,0,0,0.35);
+}
+
+
+.hero h1 span {
+    color: #3b82f6 !important;
+}
+
+
+.hero h2 {
+    margin-bottom: 20px;
+
+    color: #dbeafe !important;
+
+    font-size: clamp(
+        1.2rem,
+        2vw,
+        1.55rem
+    ) !important;
+
+    font-weight: 700 !important;
+}
+
+
+.hero-description {
+    max-width: 650px;
+
+    margin-bottom: 30px;
+
+    color: #cbd5e1 !important;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+   ========================================================= */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+}
+
+
+.hero-buttons .btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 145px;
+
+    padding: 13px 22px;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.hero-buttons .primary-btn {
+    background: #2563eb !important;
+
+    color: #ffffff !important;
+
+    border: 1px solid #3b82f6;
+
+    box-shadow:
+        0 10px 30px
+        rgba(37, 99, 235, 0.30);
+}
+
+
+.hero-buttons .primary-btn:hover {
+    background: #1d4ed8 !important;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(37, 99, 235, 0.40);
+}
+
+
+.hero-buttons .secondary-btn {
+    background: #ffffff !important;
+
+    color: #0f172a !important;
+
+    border: 1px solid #ffffff;
+}
+
+
+.hero-buttons .secondary-btn:hover {
+    background: #dbeafe !important;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   3D VISUAL AREA
+   ========================================================= */
+
+.hero-visual {
+    position: relative;
+
+    width: 100%;
+
+    height: 430px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    perspective: 1000px;
+}
+
+
+/* =========================================================
+   GLOW
+   ========================================================= */
+
+.visual-glow {
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(37,99,235,0.28),
+            rgba(37,99,235,0.08) 45%,
+            transparent 70%
+        );
+
+    filter: blur(10px);
+
+    animation: visualPulse 5s ease-in-out infinite;
+}
+
+
+@keyframes visualPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.75;
+    }
+
+    50% {
+        transform: scale(1.12);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   ORBIT RINGS
+   ========================================================= */
+
+.orbit {
+    position: absolute;
+
+    border: 1px solid
+        rgba(96,165,250,0.25);
+
+    border-radius: 50%;
+
+    transform-style: preserve-3d;
+
+    pointer-events: none;
+}
+
+
+.orbit-one {
+    width: 360px;
+    height: 150px;
+
+    transform:
+        rotateX(68deg)
+        rotateZ(-12deg);
+
+    animation:
+        orbitRotate 12s linear infinite;
+}
+
+
+.orbit-two {
+    width: 300px;
+    height: 120px;
+
+    transform:
+        rotateX(68deg)
+        rotateZ(55deg);
+
+    animation:
+        orbitRotateReverse 16s linear infinite;
+}
+
+
+.orbit-three {
+    width: 230px;
+    height: 90px;
+
+    border-color:
+        rgba(6,182,212,0.25);
+
+    transform:
+        rotateX(68deg)
+        rotateZ(110deg);
+
+    animation:
+        orbitRotate 20s linear infinite;
+}
+
+
+@keyframes orbitRotate {
+
+    from {
+        transform:
+            rotateX(68deg)
+            rotateZ(0deg);
+    }
+
+    to {
+        transform:
+            rotateX(68deg)
+            rotateZ(360deg);
+    }
+}
+
+
+@keyframes orbitRotateReverse {
+
+    from {
+        transform:
+            rotateX(68deg)
+            rotateZ(360deg);
+    }
+
+    to {
+        transform:
+            rotateX(68deg)
+            rotateZ(0deg);
+    }
+}
+
+
+/* =========================================================
+   DATABASE STACK
+   ========================================================= */
+
+.database-stack {
+    position: relative;
+
+    z-index: 10;
+
+    width: 210px;
+
+    height: 230px;
+
+    transform-style: preserve-3d;
+
+    transform:
+        rotateX(12deg)
+        rotateY(-18deg);
+
+    animation:
+        databaseFloat 5s ease-in-out infinite;
+}
+
+
+@keyframes databaseFloat {
+
+    0%,
+    100% {
+        transform:
+            rotateX(12deg)
+            rotateY(-18deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotateX(12deg)
+            rotateY(-18deg)
+            translateY(-12px);
+    }
+}
+
+
+/* =========================================================
+   DATABASE LAYERS
+   ========================================================= */
+
+.db-layer {
+    position: absolute;
+
+    left: 20px;
+
+    width: 170px;
+
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    font-size: 0.8rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1e40af
+        );
+
+    border: 2px solid
+        rgba(147,197,253,0.65);
+
+    box-shadow:
+        0 12px 30px
+        rgba(0,0,0,0.35),
+        inset 0 4px 10px
+        rgba(255,255,255,0.15);
+
+    transform-style: preserve-3d;
+}
+
+
+.db-layer::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: -22px;
+
+    height: 42px;
+
+    border-radius: 0 0 50% 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #172554,
+            #1e3a8a
+        );
+
+    border-left: 2px solid
+        rgba(147,197,253,0.45);
+
+    border-right: 2px solid
+        rgba(147,197,253,0.45);
+
+    z-index: -1;
+}
+
+
+.db-layer-top {
+    top: 20px;
+
+    z-index: 3;
+}
+
+
+.db-layer-middle {
+    top: 78px;
+
+    z-index: 2;
+
+    opacity: 0.92;
+}
+
+
+.db-layer-bottom {
+    top: 136px;
+
+    z-index: 1;
+
+    opacity: 0.82;
+}
+
+
+/* =========================================================
+   TECHNOLOGY NODES
+   ========================================================= */
+
+.tech-node {
+    position: absolute;
+
+    z-index: 15;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 14px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(15,23,42,0.88);
+
+    border: 1px solid
+        rgba(96,165,250,0.35);
+
+    color: #dbeafe;
+
+    font-size: 0.72rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.25);
+
+    animation:
+        nodeFloat 4s ease-in-out infinite;
+}
+
+
+.node-icon {
+    color: #60a5fa;
+
+    font-size: 1rem;
+}
+
+
+.azure-node {
+    top: 65px;
+    right: 25px;
+}
+
+
+.postgres-node {
+    bottom: 65px;
+    right: 10px;
+
+    animation-delay: 1s;
+}
+
+
+.ha-node {
+    top: 185px;
+    left: 15px;
+
+    animation-delay: 2s;
+}
+
+
+@keyframes nodeFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* =========================================================
+   CONNECTION LINES
+   ========================================================= */
+
+.connection {
+    position: absolute;
+
+    z-index: 4;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #3b82f6,
+            transparent
+        );
+
+    transform-origin: left center;
+
+    opacity: 0.6;
+}
+
+
+.connection-one {
+    width: 120px;
+
+    top: 145px;
+    right: 100px;
+
+    transform: rotate(-25deg);
+}
+
+
+.connection-two {
+    width: 130px;
+
+    bottom: 140px;
+    right: 100px;
+
+    transform: rotate(25deg);
+}
+
+
+.connection-three {
+    width: 110px;
+
+    left: 85px;
+    top: 210px;
+
+    transform: rotate(8deg);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero-container {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .hero-content {
+        max-width: 750px;
+
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        height: 350px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-container {
+        gap: 0;
+    }
+
+    .hero h1 {
+        font-size: 3rem !important;
+    }
+
+    .hero h2 {
+        font-size: 1.05rem !important;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .hero-visual {
+        height: 300px;
+
+        transform: scale(0.78);
+    }
+
+    .azure-node {
+        right: 0;
+    }
+
+    .postgres-node {
+        right: 0;
+    }
+
+    .ha-node {
+        left: 0;
+    }
+
+}
