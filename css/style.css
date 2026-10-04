@@ -689,3 +689,302 @@ body {
         0 15px 40px rgba(37, 99, 235, 0.25),
         inset 0 1px 1px rgba(255, 255, 255, 0.15);
 }
+
+/* =========================================================
+   PREMIUM DBA PORTFOLIO - 3D DESIGN SYSTEM
+   ========================================================= */
+
+:root {
+    --dba-blue: #2563eb;
+    --dba-cyan: #06b6d4;
+    --dba-dark: #07111f;
+    --dba-navy: #0f172a;
+    --dba-text: #0f172a;
+    --dba-muted: #64748b;
+}
+
+/* =========================================================
+   GLOBAL BACKGROUND
+   ========================================================= */
+
+body {
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(37, 99, 235, 0.08),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 50%,
+            rgba(6, 182, 212, 0.06),
+            transparent 30%
+        ),
+        #f8fafc;
+}
+
+/* =========================================================
+   HERO - 3D DATABASE ENVIRONMENT
+   ========================================================= */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(3, 10, 24, 0.86),
+            rgba(9, 20, 42, 0.92)
+        ),
+        linear-gradient(
+            rgba(37, 99, 235, 0.09) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(37, 99, 235, 0.09) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            135deg,
+            #020617,
+            #0f172a 55%,
+            #172554
+        );
+
+    background-size:
+        cover,
+        45px 45px,
+        45px 45px,
+        cover;
+}
+
+/* glowing database atmosphere */
+
+.hero::before {
+    content: "";
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -180px;
+    top: -220px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(37, 99, 235, 0.32),
+            rgba(37, 99, 235, 0.08) 45%,
+            transparent 72%
+        );
+
+    filter: blur(5px);
+
+    animation: dbaOrb 8s ease-in-out infinite;
+
+    z-index: -1;
+}
+
+/* second glowing area */
+
+.hero::after {
+    content: "";
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    left: -150px;
+    bottom: -180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(6, 182, 212, 0.25),
+            transparent 70%
+        );
+
+    filter: blur(8px);
+
+    animation: dbaOrbReverse 10s ease-in-out infinite;
+
+    z-index: -1;
+}
+
+@keyframes dbaOrb {
+
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(-25px, 25px, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes dbaOrbReverse {
+
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(30px, -20px, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* =========================================================
+   3D GLASS CARDS
+   ========================================================= */
+
+.skill-card,
+.project-card,
+.certification-card {
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+
+    border: 1px solid rgba(148, 163, 184, 0.25);
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.07);
+}
+
+.skill-card:hover,
+.project-card:hover,
+.certification-card:hover {
+
+    transform:
+        translateY(-8px)
+        perspective(900px)
+        rotateX(2deg);
+
+    border-color: rgba(37, 99, 235, 0.35);
+
+    box-shadow:
+        0 20px 45px rgba(15, 23, 42, 0.14),
+        0 0 0 1px rgba(37, 99, 235, 0.05);
+}
+
+/* =========================================================
+   3D CARD LIGHT
+   ========================================================= */
+
+.skill-card::after,
+.project-card::after,
+.certification-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(37, 99, 235, 0.7),
+            transparent
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+}
+
+.skill-card:hover::after,
+.project-card:hover::after,
+.certification-card:hover::after {
+    opacity: 1;
+}
+
+/* =========================================================
+   SECTION BACKGROUND
+   ========================================================= */
+
+.section {
+    position: relative;
+}
+
+.section:nth-of-type(even) {
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(37, 99, 235, 0.045),
+            transparent 25%
+        ),
+        #f8fafc;
+}
+
+/* =========================================================
+   PROJECT CARDS
+   ========================================================= */
+
+.project-card {
+    overflow: hidden;
+}
+
+.project-card h3 {
+    transition: color 0.3s ease;
+}
+
+.project-card:hover h3 {
+    color: var(--dba-blue);
+}
+
+/* =========================================================
+   CERTIFICATION CARDS
+   ========================================================= */
+
+.certification-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.98),
+            rgba(248, 250, 252, 0.98)
+        );
+}
+
+/* =========================================================
+   SCROLL BAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e2e8f0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #64748b;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+}
