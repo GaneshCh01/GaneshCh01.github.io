@@ -988,3 +988,65 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #2563eb;
 }
+/* =========================================
+   HERO BUTTON VISIBILITY FIX
+   ========================================= */
+
+.hero .btn,
+.hero a.btn,
+.hero .hero-btn,
+.hero a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+/* Primary button */
+
+.hero .btn-primary,
+.hero .primary-btn,
+.hero a:first-of-type {
+    background: #2563eb !important;
+    color: #ffffff !important;
+
+    border: 1px solid #3b82f6 !important;
+    border-radius: 8px;
+
+    padding: 14px 24px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 25px rgba(37, 99, 235, 0.30);
+}
+
+/* Contact button */
+
+.hero .btn-secondary,
+.hero .secondary-btn,
+.hero a:nth-of-type(2) {
+    background: #ffffff !important;
+    color: #0f172a !important;
+
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px;
+
+    padding: 14px 24px;
+
+    font-weight: 700;
+}
+
+/* Hover */
+
+.hero a:hover {
+    transform: translateY(-3px);
+}
+
+.hero .btn-primary:hover,
+.hero a:first-of-type:hover {
+    background: #1d4ed8 !important;
+}
+
+.hero .btn-secondary:hover,
+.hero a:nth-of-type(2):hover {
+    background: #e2e8f0 !important;
+}
